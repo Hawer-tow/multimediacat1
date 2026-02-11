@@ -4,12 +4,12 @@ let vid;
 let angle = 0;
 
 function preload() {
-  // Load a sound file (replace with your own file path or URL)
-  song = loadSound('assets/alex_warren_ordinary_lyrics_aac_44129.m4a');
+  // Load a sound file 
+  song = loadSound('alex_warren_ordinary_lyrics_aac_44129.m4a');
   
-  // Load a video file (replace with your own file path or URL)
-  vid = createVideo('assets/4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
-  vid.hide(); // Hide default video player
+ 
+  vid = createVideo('4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
+  vid.hide(); 
 }
 
 function setup() {
