@@ -5,10 +5,10 @@ let angle = 0;
 
 function preload() {
   // Load a sound file 
-  song = loadSound('alex_warren_ordinary_lyrics_aac_44129.m4a');
+  song = loadSound('assets/alex_warren_ordinary_lyrics_aac_44129.m4a');
   
  
-  vid = createVideo('4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
+  vid = createVideo('assets/4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
   vid.hide(); 
 }
 
