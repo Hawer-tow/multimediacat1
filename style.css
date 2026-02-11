@@ -4,7 +4,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #164A21;
+  background-color: white;
   font-family: Arial, sans-serif;
   color: #fff;
 }
@@ -20,7 +20,7 @@ main {
 
 /* Style the video with its ID */
 #bgVideo {
-  max-width: 700px;
+  max-width: 400px;
   width: 100%;
   border: 3px solid #ffff2;
   border-radius: 10px;
