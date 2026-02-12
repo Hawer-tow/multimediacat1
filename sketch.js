@@ -44,7 +44,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key === 'P') {
+  if (key.toLowerCase() === 'P') {
     if (audioPlaying) {
       song.pause();
       audioPlaying = false;
@@ -54,7 +54,7 @@ function keyPressed() {
     }
   }
 
-  if (key === 'V') {
+  if (key.toLowerCase() === 'V') {
     if (videoPlaying) {
       vid.pause();
       videoPlaying = false;
