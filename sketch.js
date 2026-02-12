@@ -4,9 +4,12 @@ let videoPlaying = false;
 let audioPlaying = false;
 
 function preload() {
+  // Load audio
   song = loadSound('assets/alex_warren_ordinary_lyrics_aac_44129.m4a');
+
+  // Load video
   vid = createVideo('assets/4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
-  vid.hide();
+  vid.hide(); // hide default player
 }
 
 function setup() {
@@ -14,7 +17,8 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
 
-  
+  // Start video muted so autoplay works
+  vid.volume(0);
   vid.loop();
   vid.play();
   videoPlaying = true;
@@ -32,7 +36,8 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key.toLowerCase() === 'p') {
+  // Toggle audio
+  if (key === 'P' || key === 'p') {
     if (audioPlaying) {
       song.pause();
       audioPlaying = false;
@@ -42,17 +47,20 @@ function keyPressed() {
     }
   }
 
-  if (key.toLowerCase() === 'v') {
+  // Toggle video
+  if (key === 'V' || key === 'v') {
     if (videoPlaying) {
       vid.pause();
       videoPlaying = false;
     } else {
       vid.play();
+      vid.volume(1); // unmute when playing
       videoPlaying = true;
     }
   }
 }
 
+// Unlock audio/video on first click (browser requirement)
 function mousePressed() {
   if (!audioPlaying) {
     song.play();
@@ -60,6 +68,7 @@ function mousePressed() {
   }
   if (!videoPlaying) {
     vid.play();
+    vid.volume(1); // unmute on click
     videoPlaying = true;
   }
 }
