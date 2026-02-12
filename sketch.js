@@ -25,7 +25,7 @@ function draw() {
   background(220);
 
   image(vid, 0, 0, width, height);
-
+/*
   push();
   translate(width / 2, height / 2);
   rotate(angle);
@@ -35,7 +35,7 @@ function draw() {
   pop();
 
   angle += 0.01;
-
+*/
   fill(0);
   text("Press 'P' to Play/Pause Music | Press 'V' to Play/Pause Video", width / 2, height - 30);
 }
