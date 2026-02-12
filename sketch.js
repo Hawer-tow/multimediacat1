@@ -16,6 +16,10 @@ function setup() {
   createCanvas(800, 600);
   textAlign(CENTER, CENTER);
   textSize(20);
+
+  vid.volume(0);  // mute so autoplay works
+  vid.loop();     // keep looping
+  vid.play();     // start playing right away
 }
 
 function draw() {
