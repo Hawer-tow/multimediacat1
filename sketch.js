@@ -1,3 +1,4 @@
+// Global variables
 let song;
 let vid;
 let angle = 0;
@@ -5,9 +6,12 @@ let videoPlaying = false;
 let audioPlaying = false;
 
 function preload() {
+  // Load audio
   song = loadSound('assets/alex_warren_ordinary_lyrics_aac_44129.m4a');
+
+  // Load video
   vid = createVideo('assets/4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
-  vid.hide();
+  vid.hide(); // hide default player
 }
 
 function setup() {
@@ -25,12 +29,12 @@ function setup() {
 function draw() {
   background(220);
 
-  // Draw video
+  // Draw video in background
   image(vid, 0, 0, width, height);
 
   // Rotating square overlay
   push();
-  translate(width/2, height/2);
+  translate(width / 2, height / 2);
   rotate(angle);
   fill(255, 100, 150, 150);
   rectMode(CENTER);
@@ -39,12 +43,14 @@ function draw() {
 
   angle += 0.01;
 
-  fill(255);
-  text("Keyboard Press "P" play/pause audio  "V" play/pause video"), width/2, height - 30);
+  // Instructions
+  fill(0);
+  text("Keyboard Press 'P' to Play/Pause Music | Press 'V' to Play/Pause Video", width / 2, height - 30);
 }
 
 function keyPressed() {
-  if (key.toLowerCase() === 'P') {
+  // Toggle audio
+  if (key.toLowerCase() === 'p') {
     if (audioPlaying) {
       song.pause();
       audioPlaying = false;
@@ -54,7 +60,8 @@ function keyPressed() {
     }
   }
 
-  if (key.toLowerCase() === 'V') {
+  // Toggle video
+  if (key.toLowerCase() === 'v') {
     if (videoPlaying) {
       vid.pause();
       videoPlaying = false;
@@ -65,7 +72,7 @@ function keyPressed() {
   }
 }
 
-// Unlock audio/video on first click
+// Unlock audio/video on first click (browser requirement)
 function mousePressed() {
   if (!audioPlaying) {
     song.play();
