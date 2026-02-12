@@ -40,7 +40,7 @@ function draw() {
   angle += 0.01;
 
   fill(255);
-  text("Press 'P' to Play/Pause Music | Press 'V' to Play/Pause Video", width/2, height - 30);
+  text("Keyboard Press "P" play/pause audio  "V" play/pause video"), width/2, height - 30);
 }
 
 function keyPressed() {
