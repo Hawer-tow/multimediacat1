@@ -48,7 +48,6 @@ function keyPressed() {
       videoPlaying = false;
     } else {
       vid.play();
-      vid.volume(1);
       videoPlaying = true;
     }
   }
