@@ -54,7 +54,7 @@ function keyPressed() {
       videoPlaying = false;
     } else {
       vid.play();
-      vid.volume(1); // unmute when playing
+      vid.volume(1); // unmute when resuming
       videoPlaying = true;
     }
   }
