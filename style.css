@@ -22,3 +22,10 @@ canvas {
   border-radius: 8px;
   margin-top: 20px;
 }
+#controls {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 8px;
+  color: black;
+}
+
