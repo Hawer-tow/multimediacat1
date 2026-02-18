@@ -15,10 +15,11 @@ function preload() {
 }
 
 function setup() {
-  // Create canvas
-  canvas = createCanvas(500, 500);
+  // Particle canvas size
+  canvas = createCanvas(600, 400);   // material area
 
-  // Attach both to the container <main>
+  // Video size
+  vid.size(600, 340);                // video area
   vid.parent("container");
   canvas.parent("container");
 
@@ -36,11 +37,13 @@ function setup() {
 
 function draw() {
   background(220);
-  drawMagneticObjects();
 
-  // Instructions
+    // Instructions
   fill(0);
   text("Press 'P' to Play/Pause Music | Press 'V' to Play/Pause Video", width / 2, height - 30);
+  drawMagneticObjects();
+
+
 }
 
 function keyPressed() {
