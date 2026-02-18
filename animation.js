@@ -1,3 +1,23 @@
+/*
+this part was also in the sketch.js and i believe it was also being used.
+function setup() {
+  createCanvas(800, 500);
+
+   initMagneticObjects();
+}
+
+function draw() {
+   drawMagneticObjects();
+}
+
+function mousePressed() {
+  magneticPulse(mouseX, mouseY);
+}
+
+
+*/
+
+
 let magnets = [];
 let magnetCount = 80;
 
