@@ -16,15 +16,14 @@ function preload() {
 
 function setup() {
   // Particle canvas size
-  canvas = createCanvas(600, 400);   // material area
+  canvas = createCanvas(800, 400);   // material area
 
   // Video size
   vid.size(600, 340);                // video area
   vid.parent("container");
   canvas.parent("container");
 
-  // Style video so it sits above canvas
-  vid.size(600, 500);   // adjust height as needed
+
   vid.volume(0);
   vid.loop();
   vid.play();
