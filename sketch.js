@@ -37,9 +37,6 @@ function setup() {
 function draw() {
   background(220);
 
-    // Instructions
-  fill(0);
-  text("Press 'P' to Play/Pause Music | Press 'V' to Play/Pause Video", width / 2, height - 30);
   drawMagneticObjects();
 
 
