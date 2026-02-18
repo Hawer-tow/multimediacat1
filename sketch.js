@@ -18,16 +18,16 @@ function setup() {
   // Create canvas
   canvas = createCanvas(800, 600);
 
+  // Attach both to the container <main>
+  vid.parent("container");
+  canvas.parent("container");
+
   // Style video so it sits above canvas
   vid.size(800, 450);   // adjust height as needed
-  vid.position(0, 0);   // place at top
   vid.volume(0);
   vid.loop();
   vid.play();
   videoPlaying = true;
-
-  // Position canvas directly below video
-  canvas.position(0, vid.height);
 
   initMagneticObjects();
   textAlign(CENTER, CENTER);
