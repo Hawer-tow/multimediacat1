@@ -1,11 +1,10 @@
-
-
 let magnets = [];
 let magnetCount = 80;
 let song;
 let vid;
 let videoPlaying = false;
 let audioPlaying = false;
+let canvas;
 
 function preload() {
   // Load audio
@@ -13,28 +12,31 @@ function preload() {
 
   // Load video
   vid = createVideo('assets/4a7a49d9a8dbde8ae31a94ea856c3356[1].mp4');
-  vid.hide(); // hide default player
 }
 
 function setup() {
-  createCanvas(800, 600);
-    createCanvas(800, 600);
-   initMagneticObjects();
-  textAlign(CENTER, CENTER);
-  textSize(20);
+  // Create canvas
+  canvas = createCanvas(800, 600);
 
-  // Start video muted so autoplay works
+  // Style video so it sits above canvas
+  vid.size(800, 450);   // adjust height as needed
+  vid.position(0, 0);   // place at top
   vid.volume(0);
   vid.loop();
   vid.play();
   videoPlaying = true;
+
+  // Position canvas directly below video
+  canvas.position(0, vid.height);
+
+  initMagneticObjects();
+  textAlign(CENTER, CENTER);
+  textSize(20);
 }
 
 function draw() {
   background(220);
-drawMagneticObjects();
-  // Draw video in background
-  image(vid, 0, 0, width, height);
+  drawMagneticObjects();
 
   // Instructions
   fill(0);
@@ -68,7 +70,7 @@ function keyPressed() {
 
 // Unlock audio/video on first click (browser requirement)
 function mousePressed() {
-   magneticPulse(mouseX, mouseY);
+  magneticPulse(mouseX, mouseY);
   if (!audioPlaying) {
     song.play();
     audioPlaying = true;
