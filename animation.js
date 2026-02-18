@@ -1,6 +1,23 @@
 let magnets = [];
 let magnetCount = 80;
 
+
+function setup() {
+  createCanvas(800, 500);
+
+   initMagneticObjects();
+}
+
+function draw() {
+   drawMagneticObjects();
+}
+
+function mousePressed() {
+  magneticPulse(mouseX, mouseY);
+}
+
+
+
 function initMagneticObjects() {
   magnets = [];
   for (let i = 0; i < magnetCount; i++) {
