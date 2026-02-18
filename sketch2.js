@@ -14,6 +14,7 @@ function preload() {
 
 function setup() {
   createCanvas(800, 600);
+    initMagneticObjects();
   textAlign(CENTER, CENTER);
   textSize(20);
 
@@ -26,7 +27,7 @@ function setup() {
 
 function draw() {
   background(220);
-
+  drawMagneticObjects();
   // Draw video in background
   image(vid, 0, 0, width, height);
 
@@ -60,8 +61,11 @@ function keyPressed() {
   }
 }
 
+
 // Unlock audio/video on first click (browser requirement)
 function mousePressed() {
+    magneticPulse(mouseX, mouseY);
+  
   if (!audioPlaying) {
     song.play();
     audioPlaying = true;
